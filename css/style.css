@@ -186,12 +186,14 @@ body {
 /* About section */
 .about,
 .menu,
+.products,
 .contact {
   padding: 7rem 7% 1.4rem;
 }
 
 .about h2,
 .menu h2,
+.products h2,
 .contact h2 {
   text-align: center;
   font-size: 2.6rem;
@@ -202,16 +204,18 @@ body {
 
 .about h2 span,
 .menu h2 span,
+.products h2 span,
 .contact span {
   color: var(--primary);
 }
 
 .about h2::after,
 .menu h2::after,
+.products h2::after,
 .contact h2::after {
   content: "";
   display: block;
-  width: 150px;
+  width: 180px;
   height: 3px;
   border-radius: 5px;
   background-color: var(--primary);
@@ -260,11 +264,13 @@ body {
 
 /* Menu section */
 .menu h2,
+.products h2,
 .contact h2 {
   margin-bottom: 1rem;
 }
 
 .menu p,
+.products p,
 .contact p {
   font-family: "Poppins", sans-serif;
   text-align: center;
@@ -296,6 +302,20 @@ body {
 
 .menu .row .menu-card .menu-card-tittle {
   margin: 1rem 2rem 0.5rem;
+}
+
+/* Product section */
+.products .row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card{
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
 }
 
 /* Contact section */
