@@ -285,9 +285,13 @@ body {
   flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
+  gap: 2rem;
 }
 
 .menu .row .menu-card {
+  flex: 1 1 200px;
+  max-width: 220px;
+  background: transparent;
   text-align: center;
   padding-bottom: 1rem;
   padding: 0 0.5rem 0.5rem;
@@ -305,17 +309,61 @@ body {
 }
 
 /* Product section */
-.products .row{
+.products .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
   margin-top: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.products .product-card{
+.products .product-card {
   text-align: center;
   border: 1px solid #666;
   padding: 2rem;
+  background: #111;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .products-content h3 {
+  margin: 1rem 0 0.5rem 0;
 }
 
 /* Contact section */
@@ -414,12 +462,17 @@ footer .credit a {
   }
 }
 /* Tablet */
-@media (max-width: 810px) {
+@media (max-width: 815px) {
   html {
     font-size: 65%;
   }
   #hamburger-menu {
     display: inline-block;
+  }
+
+  .menu .menu-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .menu p {
@@ -434,6 +487,28 @@ footer .credit a {
     width: 30rem;
     height: 100vh;
     transition: 0.4s;
+    display: block;
+    z-index: 9999;
+  }
+
+  .Navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .Navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  .Navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .Navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
   }
 
   .Navbar .search-form {
@@ -466,26 +541,6 @@ footer .credit a {
     font-weight: 300;
   }
 
-  .Navbar .navbar-nav.active {
-    right: 0;
-  }
-
-  .Navbar .navbar-nav a {
-    color: var(--bg);
-    display: block;
-    margin: 1rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-    font-weight: 400;
-  }
-  .Navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-
-  .Navbar .navbar-nav a:hover::after {
-    transform: scaleX(0.2);
-  }
-
   .contact .row {
     flex-wrap: wrap;
   }
@@ -498,6 +553,8 @@ footer .credit a {
     padding-top: 0;
   }
 }
+
+/* End of Tablet media query */
 
 /* Mobile Phone */
 @media (max-width: 450px) {
