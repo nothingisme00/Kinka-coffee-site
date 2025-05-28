@@ -201,7 +201,7 @@ body {
 .Hero .content {
   padding: 1.4rem 7%;
   position: fixed;
-  top: 210px;
+  /* top: 210px; */
 }
 
 .Hero .content h1 {
